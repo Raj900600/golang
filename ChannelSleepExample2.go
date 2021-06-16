@@ -21,10 +21,10 @@ for _,link := range links {
 	go checkLink(link,c)
 }
 for l :=range c {
-	go func() {
+	go func(link string) {
 		time.Sleep(5 * time.Second)
 	 checkLink(l,c)
-	}()
+	}(l)
 	
 }
 }
